@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <button class="back-button" onclick="window.location.href = 'index.html';"><i class="fas fa-chevron-left"></i> Back to Homepage</button>
+
+  <meta charset="UTF-8">
+  <title>Achievements</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+      .fas {
+      font-size: 25px;
+    }
+
+    th.description-header {
+      width: 60%;
+    }
+
+    th.title {
+      width: 200px;
+    }
+
+    th.cert {
+      width: 140px;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .back-button i {
+      margin-right: 5px;
+    }
+
+    .back-button:hover {
+      background-color: #eee;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      color: rgba(0, 0, 0, 0.6);
+      background: #fafafa;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      word-break: break-word;
+    }
+
+    th {
+      background-color: #f9f9f9;
+    }
+
+    .certificate-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+    }
+
+    .certificate-modal.show {
+      display: block;
+    }
+
+    .certificate-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+
+    .certificate-img {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      td,
+      th {
+        font-size: 14px;
+      }
+    }
+    
+    .view-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .view-button i {
+      margin-right: 5px;
+    }
+
+    .view-button:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+  <script>
+    function toggleCertificate(certificateId) {
+      var modal = document.getElementById(certificateId);
+      modal.classList.toggle("show");
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Certificates</h1>
+
+  <table>
+    <tr>
+      <th class="title">Title</th>
+      <th class="description-header">Description</th>
+      <th class="cert">Certificate</th>
+    </tr>
+    <tr>
+      <td><i class="fas fa-shield-alt"></i> Architect Your Cybersecurity Career & Digital Wellbeing</td>
+      <td>
+        <p>
+          The Cybersecurity Event Series offered participants valuable insights into industry perspectives, career guidance, threat management, and digital wellbeing. Through simulations, demonstrations, and interactive sessions, attendees gained practical knowledge and skills in various aspects of cybersecurity. The event covered a wide range of topics, including:
+        </p>
+
+        <ul>
+          <li>Architecting careers in cybersecurity</li>
+          <li>Identifying and managing vulnerabilities</li>
+          <li>Promoting digital wellbeing in a hyper-connected world</li>
+        </ul>
+      </td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate1')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate1">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/cyberarch.jpg" alt="Certificate 1">
+            <span class="close-button" onclick="toggleCertificate('certificate1')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fas fa-laptop-code"></i> Introduction to Forms of Cyber Security</td>
+      <td>
+        <p>The Value Added Course (VAC) offered a comprehensive exploration of cybersecurity fundamentals, equipping participants with essential knowledge in the field.</p>
+        <p>The course covered a range of topics, including:</p>
+        <ul>
+          <li>Basics of cyber security</li>
+          <li>Different types of hackers</li>
+          <li>Malware and its impact</li>
+          <li>Common cyber attacks</li>
+          <li>Foundational principles of cyber security</li>
+        </ul>
+      </td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate2')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate2">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/cyber2.jpg" alt="Certificate 2">
+            <span class="close-button" onclick="toggleCertificate('certificate2')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><i class="fas fa-chart-line"></i> Stockastic Virtual Stock Market Event</td>
+      <td>
+        <p>
+          Participated in an immersive virtual stock market simulation, gaining valuable insights into the world of investing.
+          Experienced the challenges and opportunities faced by investors and learned to navigate financial markets effectively.
+          This interactive event provided a realistic and engaging environment, fostering continuous learning and enjoyment
+          through real-time competition with peers.
+        </p>
+      </td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate3')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate3">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/StockGro_Certificate.jpg" alt="Stockastic Certificate">
+            <span class="close-button" onclick="toggleCertificate('certificate3')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><i class="fas fa-utensils"></i> Cook-Off 7.0</td>
+      <td>Participated in Cook-Off, an annual competitive coding event organized by CodeChef-VIT. This experience enriched my coding skills, providing valuable knowledge and enhancing my problem-solving abilities. Cook-Off has been instrumental in shaping my coding journey and deepening my appreciation for competitive coding.</td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate4')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate4">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/cookoff.jpg" alt="Cook-Off Certificate">
+            <span class="close-button" onclick="toggleCertificate('certificate4')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td><i class="fas fa-trophy"></i> International English Olympiad</td>
+      <td>
+        <p>Received the 1st place certificate in school for the International English Olympiad. This competition tested participants' English language skills and knowledge in various areas such as grammar, vocabulary, reading comprehension, and writing.</p>
+      </td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate5')">View Certificate</button>
+        <div class="certificate-modal" id="certificate5">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/ieo.jpg" alt="Ieo Certificate">
+            <span class="close-button" onclick="toggleCertificate('certificate5')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    
+
+    <tr>
+      <td><i class="fas fa-chess"></i> Chess Competition</td>
+      <td>Received the 2nd place certificate in school for the Chess Competition. This competition tested strategic thinking, decision-making, and analytical skills in the game of chess.</td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate6')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate6">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/chess.jpg" alt="Chess Competition Certificate">
+            <span class="close-button" onclick="toggleCertificate('certificate6')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  
+
+    <tr>
+      <td><i class="fas fa-flask"></i> Science Exhibition</td>
+      <td>Participated in a Science Exhibition, showcasing my own small project and exploring various exciting projects created by other participants. It was an opportunity to enhance scientific knowledge, creativity, and presentation skills.</td>
+      <td>
+        <button class="view-button" onclick="toggleCertificate('certificate7')"> View Certificate</button>
+        <div class="certificate-modal" id="certificate7">
+          <div class="certificate-content">
+            <img class="certificate-img" src="../images/exhibition.jpg" alt="Science Exhibition Certificate">
+            <span class="close-button" onclick="toggleCertificate('certificate7')">&times;</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    
+    
+
+
+  </table>
+
+</body>
+
+</html>
