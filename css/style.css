@@ -552,21 +552,26 @@ i.material-icons {
 }
 
 .skills-content ul {
-  list-style: none;
   padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
-.skills-content li {
+.skills-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.skills-content ul li {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  align-items: flex-start;
+  margin-bottom: 5px;
 }
 
-.skills-content li i {
+.skills-content ul li::before {
+  content: "\2192"; 
   margin-right: 10px;
-  font-size: 24px;
-  color: #333;
+  margin-top: 3px;
+  font-size: 12px;
 }
 
 .skill-title {
